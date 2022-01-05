@@ -1,0 +1,32 @@
+@page "/Teams"
+@{
+    var teams=new List<Team>();
+    teams.Add(new Team("Barcelona", 10));
+    teams.Add(new Team("Atletico Madrid", 11));
+    teams.Add(new Team("Real Madrid", 12));
+}
+
+<div class="row">
+    <div class="col">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col"># Registro</th>
+                    <th scope="col">Nombre</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    foreach (var team in teams)
+                    {
+                        <tr>
+                            <th>#@team.id</th>
+                            <th>#@team.name</th>
+                        </tr>
+
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
